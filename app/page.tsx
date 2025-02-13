@@ -12,6 +12,7 @@ export default function Home() {
   const containerRef = React.useRef<HTMLElement | null>(document.getElementById("container"));
 
   useEffect(() => {
+    // Initialize the face detector
     containerRef.current = document.getElementById("container");
     if (!containerRef.current) {
       console.error("Container not found");
@@ -20,8 +21,8 @@ export default function Home() {
     initializeFaceDetector(containerRef.current).then((detector) => setFaceDetector(detector));
   }, []);
 
-
-  const handleClick = async () => {
+  /** Handle detecting face in the image */
+  const handleDetecting = async () => {
     if (!containerRef.current) {
       console.error("Container not found");
       return;
@@ -46,8 +47,8 @@ export default function Home() {
         width={500}
         height={500}
       />
-      <button onClick={handleClick} className="p-2 border border-black mt-4">
-        Click me
+      <button onClick={handleDetecting} className="p-2 border border-black mt-4">
+        Detect face
       </button>
     </div>
   );
