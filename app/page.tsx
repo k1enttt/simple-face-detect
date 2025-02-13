@@ -38,10 +38,10 @@ export default function Home() {
   };
 
   return (
-    <div id="container" className="">
+    <div id="container" className="relative">
       <Image
         ref={imageRef}
-        src={"/kevin1.jpg"}
+        src={"/kevin2.jpg"}
         alt="kien-portrait"
         width={500}
         height={500}
