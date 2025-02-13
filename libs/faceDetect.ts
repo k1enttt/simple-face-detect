@@ -88,7 +88,7 @@ const displayImageDetections = (
       (boxOriginY * ratio - 30) +
       "px; " +
       "width: " +
-      (boxWidth * ratio) +
+      (boxWidth * ratio - 10) +
       "px;" +
       "hight: " +
       20 +
