@@ -36,7 +36,11 @@ export default function Home() {
       console.error("Image source not found");
       return;
     }
-    detectFaceOnImage(faceDetector, imageRef.current);
+    detectFaceOnImage(faceDetector, imageRef.current).then((detections) => {
+      if (!detections || detections.length === 0) {
+        alert("No face detected");
+      }
+    });
   };
 
   /** Handle uploading image from your device */
