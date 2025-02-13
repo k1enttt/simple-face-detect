@@ -80,35 +80,21 @@ const displayImageDetections = (
     const boxOriginY = detection.boundingBox?.originY ?? 0;
     const boxWidth = detection.boundingBox?.width ?? 0;
     const boxHeight = detection.boundingBox?.height ?? 0;
-    p.style =
-      "left: " +
-      boxOriginX * ratio +
-      "px;" +
-      "top: " +
-      (boxOriginY * ratio - 30) +
-      "px; " +
-      "width: " +
-      (boxWidth * ratio - 10) +
-      "px;" +
-      "hight: " +
-      20 +
-      "px;";
+    p.setAttribute("style", 
+      "left: " + boxOriginX * ratio + "px;" +
+      "top: " + (boxOriginY * ratio - 30) + "px;" +
+      "width: " + (boxWidth * ratio - 10) + "px;" +
+      "height: " + 20 + "px;"
+    );
 
     const highlighter = document.createElement("div");
     highlighter.setAttribute("class", "highlighter");
-    highlighter.style =
-      "left: " +
-      boxOriginX * ratio +
-      "px;" +
-      "top: " +
-      boxOriginY * ratio +
-      "px;" +
-      "width: " +
-      boxWidth * ratio +
-      "px;" +
-      "height: " +
-      boxHeight * ratio +
-      "px;";
+    highlighter.setAttribute("style", 
+      "left: " + boxOriginX * ratio + "px;" +
+      "top: " + boxOriginY * ratio + "px;" +
+      "width: " + boxWidth * ratio + "px;" +
+      "height: " + boxHeight * ratio + "px;"
+    );
 
     resultElement.parentNode?.appendChild(highlighter);
     resultElement.parentNode?.appendChild(p);
